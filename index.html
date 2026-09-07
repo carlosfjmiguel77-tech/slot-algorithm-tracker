@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Slot Algorithm Tracker — registo, análise e histórico de resultados de slots." />
+  <title>Slot Algorithm Tracker — V2</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="logo">SAT</span><div><strong>Slot Algorithm Tracker</strong><small>V2 • Analytics Lab</small></div></div>
+    <nav><a href="#tracker">Tracker</a><a href="#analytics">Analytics</a><a href="#academy">Academy</a><a class="nav-cta" href="#pro">Pro €19,90</a></nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow">REGISTA. MEDE. APRENDE.</span>
+        <h1>Transforma sessões soltas em <em>dados claros</em>.</h1>
+        <p>Regista multiplicadores, bónus e resultados, acompanha tendências do teu próprio histórico e toma decisões com mais contexto.</p>
+        <div class="actions"><a class="btn primary" href="#tracker">Abrir Slot Lab</a><a class="btn ghost" href="#pro">Conhecer Pro</a></div>
+        <p class="note">Ferramenta de registo e análise. Não prevê resultados nem garante ganhos.</p>
+      </div>
+      <div class="hero-card">
+        <div class="metric"><span>Registos</span><strong id="hero-records">0</strong></div>
+        <div class="metric"><span>Multiplicador médio</span><strong id="hero-avg">0,00x</strong></div>
+        <div class="metric"><span>Melhor multiplicador</span><strong id="hero-best">0,00x</strong></div>
+        <div class="spark" id="hero-spark"></div>
+      </div>
+    </section>
+
+    <section id="tracker" class="section">
+      <div class="section-head"><div><span class="eyebrow">SLOT LAB</span><h2>Regista uma sessão</h2></div><button class="btn ghost" id="clearBtn">Limpar histórico</button></div>
+      <div class="grid-two">
+        <form id="entryForm" class="panel">
+          <label>Jogo<input id="game" name="game" maxlength="60" placeholder="Ex.: Book of Ra" required /></label>
+          <div class="form-row"><label>Resultado (€)<input id="result" name="result" type="number" step="0.01" inputmode="decimal" placeholder="0,00" required /></label><label>Multiplicador<input id="mult" name="mult" type="number" step="0.01" min="0" inputmode="decimal" placeholder="0,00" required /></label></div>
+          <div class="form-row"><label>Bónus<select id="bonus" name="bonus"><option value="Não">Não</option><option value="Sim">Sim</option></select></label><label>Nota<input id="note" name="note" maxlength="100" placeholder="Opcional" /></label></div>
+          <button class="btn primary full" type="submit">Guardar registo</button>
+        </form>
+        <div class="panel table-panel"><div class="table-wrap"><table><thead><tr><th>Data</th><th>Jogo</th><th>€</th><th>x</th><th>Bónus</th></tr></thead><tbody id="historyBody"></tbody></table></div><div id="emptyState" class="empty">Ainda não existem registos.</div></div>
+      </div>
+    </section>
+
+    <section id="analytics" class="section alt">
+      <div class="section-head"><div><span class="eyebrow">ANALYTICS</span><h2>O teu histórico em números</h2></div><button class="btn ghost" id="exportBtn">Exportar CSV</button></div>
+      <div class="stats"><div class="stat"><span>Total</span><strong id="stat-total">€0,00</strong></div><div class="stat"><span>Média x</span><strong id="stat-avg">0,00x</strong></div><div class="stat"><span>Maior x</span><strong id="stat-best">0,00x</strong></div><div class="stat"><span>Bónus</span><strong id="stat-bonus">0</strong></div></div>
+      <div class="panel chart-panel"><div class="chart-title">Evolução dos multiplicadores</div><div class="chart" id="chart"></div></div>
+    </section>
+
+    <section id="academy" class="section">
+      <div class="section-head"><div><span class="eyebrow">ACADEMY</span><h2>6 módulos rápidos</h2></div></div>
+      <div class="academy-grid" id="academyGrid"></div>
+    </section>
+
+    <section id="pro" class="section pro">
+      <div class="pro-box"><div><span class="eyebrow">PRO • PAGAMENTO ÚNICO</span><h2>Mais controlo sobre o teu histórico.</h2><p>Desbloqueia ferramentas avançadas de análise e organização. Preço alvo: <strong>€19,90</strong>, pagamento único.</p></div><a class="btn primary" href="https://buy.stripe.com/PLACEHOLDER" rel="noopener">Comprar Pro</a></div>
+      <p class="note center">O botão Stripe é um marcador até existir um Payment Link de €19,90 configurado como pagamento único. Não uses um link de subscrição.</p>
+    </section>
+  </main>
+
+  <footer><span>© 2026 Slot Algorithm Tracker</span><span>Dados guardados localmente neste browser.</span></footer>
+  <script src="app.js"></script>
+</body>
+</html>
